@@ -8,119 +8,119 @@ const loadMoreEl = document.getElementById("load-more");
 
 const courses = [
     {
-        photo: "1959b06e7f5d4163ea9599946af07d3d52f61d21.jpg",
+        photo: "1959b06e7f5d4163ea9599946af07d3d52f61d21.webp",
         category: "Marketing",
         title: "The Ultimate Google Ads Training Course",
         price: "480",
         author: "Marvin McKinney",
     },
     {
-        photo: "4dc0c01cdada93a61e7f51ac6388e22a998e52c3.jpg",
+        photo: "4dc0c01cdada93a61e7f51ac6388e22a998e52c3.webp",
         category: "Management",
         title: "HR  Management and Analytics",
         price: "200",
         author: "Leslie Alexander Li",
     },
     {
-        photo: "1adcaf7957590e8cdfee47506b5afbb5f1d3d251.jpg",
+        photo: "1adcaf7957590e8cdfee47506b5afbb5f1d3d251.webp",
         category: "HR & Recruting",
         title: "Prduct Management Fundamentals",
         price: "100",
         author: "Jerome Bell",
     },
     {
-        photo: "56e453da1f9df64680ce9ae8deb70c4fd6494a76.jpg",
+        photo: "56e453da1f9df64680ce9ae8deb70c4fd6494a76.webp",
         category: "Marketing",
         title: "Brand Management & PR Communications",
         price: "500",
         author: "Guy Hawkins",
     },
     {
-        photo: "1c5469059ec3475582a6f6129b6ad3aed940c4d0.jpg",
+        photo: "1c5469059ec3475582a6f6129b6ad3aed940c4d0.webp",
         category: "Design",
         title: "Graphic Design Basic",
         price: "400",
         author: "Dianne Russell",
     },
     {
-        photo: "c63086c15719088561c8ec14b31455901e6aced2.jpg",
+        photo: "c63086c15719088561c8ec14b31455901e6aced2.webp",
         category: "Management",
         title: "Business Development Management",
         price: "530",
         author: "Kristin Watson",
     },
     {
-        photo: "26b7504f2f3ca140714e87c67d19cee808f942e3.jpg",
+        photo: "26b7504f2f3ca140714e87c67d19cee808f942e3.webp",
         category: "Development",
         title: "Highload Software Architecture",
         price: "600",
         author: "Brooklyn Simmons",
     },
     {
-        photo: "e6c7967bad5827ead11861fa456bdb395058c281.jpg",
+        photo: "e6c7967bad5827ead11861fa456bdb395058c281.webp",
         category: "HR & Recruting",
         title: "Human Resources – Selection and Recruitment",
         price: "150",
         author: "Kathryn Murphy",
     },
     {
-        photo: "39a7972cf1e363e8eb007225e0b26ec15b87aa9b.jpg",
+        photo: "39a7972cf1e363e8eb007225e0b26ec15b87aa9b.webp",
         category: "Design",
         title: "User Experience. Human-centered Design",
         price: "240",
         author: "Cody Fisher",
     },
     {
-        photo: "26b7504f2f3ca140714e87c67d19cee808f942e3.jpg",
+        photo: "26b7504f2f3ca140714e87c67d19cee808f942e3.webp",
         category: "Development",
         title: "Advanced JavaScript Frameworks",
         price: "550",
         author: "Robert Johnson",
     },
     {
-        photo: "4dc0c01cdada93a61e7f51ac6388e22a998e52c3.jpg",
+        photo: "4dc0c01cdada93a61e7f51ac6388e22a998e52c3.webp",
         category: "Management",
         title: "Strategic Leadership and Decision Making",
         price: "350",
         author: "Sarah Chen",
     },
     {
-        photo: "1959b06e7f5d4163ea9599946af07d3d52f61d21.jpg",
+        photo: "1959b06e7f5d4163ea9599946af07d3d52f61d21.webp",
         category: "Marketing",
         title: "Social Media Marketing Mastery",
         price: "420",
         author: "Michael Torres",
     },
     {
-        photo: "e6c7967bad5827ead11861fa456bdb395058c281.jpg",
+        photo: "e6c7967bad5827ead11861fa456bdb395058c281.webp",
         category: "HR & Recruting",
         title: "Employee Engagement Strategies",
         price: "180",
         author: "Jennifer Lee",
     },
     {
-        photo: "1c5469059ec3475582a6f6129b6ad3aed940c4d0.jpg",
+        photo: "1c5469059ec3475582a6f6129b6ad3aed940c4d0.webp",
         category: "Design",
         title: "UI/UX Design Principles",
         price: "380",
         author: "Alex Rivera",
     },
     {
-        photo: "56e453da1f9df64680ce9ae8deb70c4fd6494a76.jpg",
+        photo: "56e453da1f9df64680ce9ae8deb70c4fd6494a76.webp",
         category: "Marketing",
         title: "Content Marketing and SEO",
         price: "460",
         author: "Olivia Parker",
     },
     {
-        photo: "39a7972cf1e363e8eb007225e0b26ec15b87aa9b.jpg",
+        photo: "39a7972cf1e363e8eb007225e0b26ec15b87aa9b.webp",
         category: "Design",
         title: "Digital Product Design",
         price: "320",
         author: "David Kim",
     },
     {
-        photo: "1adcaf7957590e8cdfee47506b5afbb5f1d3d251.jpg",
+        photo: "1adcaf7957590e8cdfee47506b5afbb5f1d3d251.webp",
         category: "HR & Recruting",
         title: "Talent Acquisition Best Practices",
         price: "220",
@@ -187,7 +187,7 @@ const filterCourses = () => {
 };
 
 const getPhotoSrc = (src) => {
-    return `assets/images//${src}`;
+    return `assets/images/${src}`;
 };
 
 const getCategoryClass = (category) => {
