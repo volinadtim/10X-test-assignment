@@ -46,6 +46,10 @@ html {
     height: 100%;
 }
 
+html {
+    font-size: 16px;
+}
+
 body {
     padding-top: 50px;
     padding-bottom: 86px;
@@ -58,7 +62,7 @@ body {
 }
 
 .header {
-    margin-bottom: 85px;
+    margin-bottom: 5.3125rem;
 }
 
 .heading-container {
@@ -73,20 +77,22 @@ body {
         font-family: "Lato";
         font-style: normal;
         font-weight: 700;
-        font-size: 16px;
+        font-size: 1rem;
         line-height: 150%;
         letter-spacing: 1px;
         text-transform: uppercase;
         color: $gray900;
+        text-align: center;
     }
 
     .heading {
         font-family: "Lato";
         font-style: normal;
         font-weight: 900;
-        font-size: 46px;
+        font-size: 2.875rem;
         line-height: 130%;
         color: $gray900;
+        text-align: center;
     }
 }
 
@@ -94,11 +100,13 @@ body {
     display: flex;
     justify-content: space-between;
     margin-bottom: 60px;
+    gap: 2em;
 }
 
 .categories {
     display: flex;
-    gap: 12px;
+    gap: 0.875em;
+    flex-wrap: wrap;
 
     .category {
         /* tab/number */
@@ -106,8 +114,8 @@ body {
         /* Auto layout */
         display: flex;
         align-items: center;
-        padding: 10px 20px;
-        gap: 4px;
+        padding: 0.625em 1.25em;
+        gap: 0.25em;
         border: 1px solid transparent;
 
         border-radius: 4px;
@@ -117,9 +125,10 @@ body {
             font-family: "Lato";
             font-style: normal;
             font-weight: 600;
-            font-size: 16px;
-            line-height: 26px;
+            font-size: 1rem;
+            line-height: 160%;
             text-align: center;
+            white-space: nowrap;
 
             color: $gray600;
         }
@@ -128,7 +137,7 @@ body {
             font-family: "Lato";
             font-style: normal;
             font-weight: 900;
-            font-size: 10px;
+            font-size: 0.625rem;
             line-height: 150%;
             text-align: center;
 
@@ -165,7 +174,7 @@ body {
         font-family: "Lato";
         font-style: normal;
         font-weight: 400;
-        font-size: 14px;
+        font-size: 0.875rem;
         line-height: 150%;
         padding: 11px 16px;
 
@@ -183,7 +192,7 @@ body {
 .courses {
     display: flex;
     flex-wrap: wrap;
-    gap: 30px;
+    gap: 1.875em;
     margin-bottom: 80px;
 }
 
@@ -202,27 +211,27 @@ body {
 
     &__photo {
         width: 100%;
-        object-fit: contain;
+        object-fit: cover;
         aspect-ratio: 13/8;
     }
 
     &__content {
         display: flex;
         flex-direction: column;
-        padding: 24px 24px;
-        gap: 20px;
+        padding: 1.5em 1.5em;
+        gap: 1.25em;
         align-items: flex-start;
     }
 
     &__category {
         display: inline-block;
-        padding: 1px 8px;
+        padding: 1px 0.5em;
         border-radius: 4px;
 
         font-family: "Lato";
         font-style: normal;
         font-weight: 400;
-        font-size: 14px;
+        font-size: 0.875rem;
         line-height: 150%;
         color: $white;
 
@@ -247,7 +256,7 @@ body {
         font-family: "Lato";
         font-style: normal;
         font-weight: 700;
-        font-size: 20px;
+        font-size: 1.25rem;
         line-height: 150%;
         color: $gray900;
     }
@@ -262,7 +271,7 @@ body {
         font-family: "Lato";
         font-style: normal;
         font-weight: 700;
-        font-size: 18px;
+        font-size: 1.125rem;
         line-height: 150%;
         color: $danger;
     }
@@ -276,7 +285,7 @@ body {
         font-family: "Lato";
         font-style: normal;
         font-weight: 400;
-        font-size: 18px;
+        font-size: 1.125rem;
         line-height: 150%;
         color: $gray700;
     }
@@ -305,9 +314,73 @@ body {
             font-family: "Lato";
             font-style: normal;
             font-weight: 700;
-            font-size: 16px;
+            font-size: 1rem;
             line-height: 160%;
             color: $gray800;
+        }
+    }
+}
+
+@media (max-width: 1320px) {
+    .courses {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .course {
+        width: auto;
+        // flex: 1;
+    }
+}
+
+@media (max-width: 1024px) {
+    html {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 12px;
+    }
+
+    .courses {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .course {
+        width: auto;
+        // flex: 1;
+    }
+}
+
+@media (max-width: 680px) {
+    .heading-container {
+        padding: 0;
+    }
+
+    .filters {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .search-field {
+        width: 100%;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 11px;
+    }
+
+    .courses {
+        grid-template-columns: 1fr;
+    }
+
+    .course {
+        &__photo {
+            aspect-ratio: 2/1;
         }
     }
 }
