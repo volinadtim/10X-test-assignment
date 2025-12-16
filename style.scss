@@ -1,0 +1,248 @@
+$gray900: #1e212c;
+$gray700: #787a80;
+$gray600: #9a9ca5;
+$gray400: #d7dadd;
+$gray300: #e5e8ed;
+$white: #ffffff;
+
+$success: #03cea4;
+$info: #5a87fc;
+$warning: #f89828;
+$pink: #f52f6e;
+$danger: #ff4242;
+$deepblue: #7772f1;
+
+$shadowSmall: 0px 80px 80px -20px rgba(154, 156, 165, 0.08),
+    0px 30px 24px -10px rgba(154, 156, 165, 0.05),
+    0px 12px 10px -6px rgba(154, 156, 165, 0.04),
+    0px 4px 4px -4px rgba(30, 33, 44, 0.03);
+
+$shadowRegular: 0px 80px 80px -20px rgba(154, 156, 165, 0.16),
+    0px 30px 24px -10px rgba(154, 156, 165, 0.1),
+    0px 12px 10px -6px rgba(154, 156, 165, 0.08),
+    0px 4px 4px -4px rgba(30, 33, 44, 0.05);
+
+* {
+    box-sizing: border-box;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding: 0;
+    margin: 0;
+}
+
+body,
+html {
+    padding: 0;
+    margin: 0;
+    height: 100%;
+}
+
+body {
+    padding-top: 50px;
+}
+
+.container {
+    margin: auto;
+    padding: 10px;
+    max-width: 1250px;
+}
+
+.header {
+    margin-bottom: 85px;
+}
+
+.heading-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-right: 26px;
+    gap: 8px;
+
+    .subheading {
+        font-family: "Lato";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 150%;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: $gray900;
+    }
+
+    .heading {
+        font-family: "Lato";
+        font-style: normal;
+        font-weight: 900;
+        font-size: 46px;
+        line-height: 130%;
+        color: $gray900;
+    }
+}
+
+.filters {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 60px;
+}
+
+.categories {
+    display: flex;
+    gap: 12px;
+}
+
+.search-field {
+    position: relative;
+    width: 315px;
+    height: 44px;
+
+    .search {
+        width: 100%;
+        // right: 345px;
+        // top: 222px;
+
+        background: $white;
+        /* gray/400 */
+        border: 1px solid $gray400;
+        border-radius: 4px;
+
+        font-family: "Lato";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
+        padding: 11px 16px;
+
+        color: $gray600;
+        outline: none;
+    }
+
+    .search-icon {
+        position: absolute;
+        right: 16px;
+        top: 14px;
+    }
+}
+
+.courses {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.course {
+    width: 390px;
+    background: $white;
+    border: 1px solid $gray300;
+    border-radius: 4px;
+    box-shadow: $shadowSmall;
+    box-sizing: border-box;
+
+    &:hover {
+        box-shadow: $shadowRegular;
+    }
+
+    &__photo {
+        width: 100%;
+        object-fit: contain;
+        aspect-ratio: 13/8;
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        padding: 24px 24px;
+        gap: 20px;
+        align-items: flex-start;
+    }
+
+    &__category {
+        display: inline-block;
+        /* badge */
+
+        /* Auto layout */
+        // display: flex;
+        // flex-direction: row;
+        // align-items: center;
+        padding: 1px 8px;
+        // gap: 10px;
+
+        // width: 80px;
+        // height: 23px;
+
+        /* success */
+        border-radius: 4px;
+
+        // width: 64px;
+        // height: 21px;
+
+        font-family: "Lato";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 150%;
+        color: $white;
+
+        &--success {
+            background: $success;
+        }
+        &--info {
+            background: $info;
+        }
+        &--warning {
+            background: $warning;
+        }
+        &--pink {
+            background: $pink;
+        }
+        &--deepblue {
+            background: $deepblue;
+        }
+    }
+
+    &__title {
+        font-family: "Lato";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 150%;
+        color: $gray900;
+    }
+
+    &__info {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+
+    &__price {
+        font-family: "Lato";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 150%;
+        color: $danger;
+    }
+
+    &__divider {
+        border-right: 1px solid $gray700;
+        height: 16px;
+        // transform: rotate(90deg);
+    }
+
+    &__author {
+        font-family: "Lato";
+        font-style: normal;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 150%;
+        color: $gray700;
+    }
+}

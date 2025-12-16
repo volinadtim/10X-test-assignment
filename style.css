@@ -1,1 +1,191 @@
+* {
+  box-sizing: border-box;
+}
 
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+}
+
+body,
+html {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+body {
+  padding-top: 50px;
+}
+
+.container {
+  margin: auto;
+  padding: 10px;
+  max-width: 1250px;
+}
+
+.header {
+  margin-bottom: 85px;
+}
+
+.heading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-right: 26px;
+  gap: 8px;
+}
+.heading-container .subheading {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: #1e212c;
+}
+.heading-container .heading {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 46px;
+  line-height: 130%;
+  color: #1e212c;
+}
+
+.filters {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.categories {
+  display: flex;
+  gap: 12px;
+}
+
+.search-field {
+  position: relative;
+  width: 315px;
+  height: 44px;
+}
+.search-field .search {
+  width: 100%;
+  background: #ffffff;
+  /* gray/400 */
+  border: 1px solid #d7dadd;
+  border-radius: 4px;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  padding: 11px 16px;
+  color: #9a9ca5;
+  outline: none;
+}
+.search-field .search-icon {
+  position: absolute;
+  right: 16px;
+  top: 14px;
+}
+
+.courses {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
+
+.course {
+  width: 390px;
+  background: #ffffff;
+  border: 1px solid #e5e8ed;
+  border-radius: 4px;
+  box-shadow: 0px 80px 80px -20px rgba(154, 156, 165, 0.08), 0px 30px 24px -10px rgba(154, 156, 165, 0.05), 0px 12px 10px -6px rgba(154, 156, 165, 0.04), 0px 4px 4px -4px rgba(30, 33, 44, 0.03);
+  box-sizing: border-box;
+}
+.course:hover {
+  box-shadow: 0px 80px 80px -20px rgba(154, 156, 165, 0.16), 0px 30px 24px -10px rgba(154, 156, 165, 0.1), 0px 12px 10px -6px rgba(154, 156, 165, 0.08), 0px 4px 4px -4px rgba(30, 33, 44, 0.05);
+}
+.course__photo {
+  width: 100%;
+  object-fit: contain;
+  aspect-ratio: 13/8;
+}
+.course__content {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 24px;
+  gap: 20px;
+  align-items: flex-start;
+}
+.course__category {
+  display: inline-block;
+  /* badge */
+  /* Auto layout */
+  padding: 1px 8px;
+  /* success */
+  border-radius: 4px;
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #ffffff;
+}
+.course__category--success {
+  background: #03cea4;
+}
+.course__category--info {
+  background: #5a87fc;
+}
+.course__category--warning {
+  background: #f89828;
+}
+.course__category--pink {
+  background: #f52f6e;
+}
+.course__category--deepblue {
+  background: #7772f1;
+}
+.course__title {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 150%;
+  color: #1e212c;
+}
+.course__info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.course__price {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 150%;
+  color: #ff4242;
+}
+.course__divider {
+  border-right: 1px solid #787a80;
+  height: 16px;
+}
+.course__author {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 150%;
+  color: #787a80;
+}
