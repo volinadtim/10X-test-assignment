@@ -1,7 +1,10 @@
 "use strict";
-const categoryWrapperEl = document.getElementById("categories");
+const PAGE_SIZE = 9;
+
+const categoriesWrapperEl = document.getElementById("categories");
 const coursesWrapperEl = document.getElementById("courses");
 const searchInputEl = document.getElementById("search");
+const loadMoreEl = document.getElementById("load-more");
 
 const courses = [
     {
@@ -67,6 +70,62 @@ const courses = [
         price: "240",
         author: "Cody Fisher",
     },
+    {
+        photo: "26b7504f2f3ca140714e87c67d19cee808f942e3.jpg",
+        category: "Development",
+        title: "Advanced JavaScript Frameworks",
+        price: "550",
+        author: "Robert Johnson",
+    },
+    {
+        photo: "4dc0c01cdada93a61e7f51ac6388e22a998e52c3.jpg",
+        category: "Management",
+        title: "Strategic Leadership and Decision Making",
+        price: "350",
+        author: "Sarah Chen",
+    },
+    {
+        photo: "1959b06e7f5d4163ea9599946af07d3d52f61d21.jpg",
+        category: "Marketing",
+        title: "Social Media Marketing Mastery",
+        price: "420",
+        author: "Michael Torres",
+    },
+    {
+        photo: "e6c7967bad5827ead11861fa456bdb395058c281.jpg",
+        category: "HR & Recruting",
+        title: "Employee Engagement Strategies",
+        price: "180",
+        author: "Jennifer Lee",
+    },
+    {
+        photo: "1c5469059ec3475582a6f6129b6ad3aed940c4d0.jpg",
+        category: "Design",
+        title: "UI/UX Design Principles",
+        price: "380",
+        author: "Alex Rivera",
+    },
+    {
+        photo: "56e453da1f9df64680ce9ae8deb70c4fd6494a76.jpg",
+        category: "Marketing",
+        title: "Content Marketing and SEO",
+        price: "460",
+        author: "Olivia Parker",
+    },
+    {
+        photo: "39a7972cf1e363e8eb007225e0b26ec15b87aa9b.jpg",
+        category: "Design",
+        title: "Digital Product Design",
+        price: "320",
+        author: "David Kim",
+    },
+    {
+        photo: "1adcaf7957590e8cdfee47506b5afbb5f1d3d251.jpg",
+        category: "HR & Recruting",
+        title: "Talent Acquisition Best Practices",
+        price: "220",
+        author: "Amanda Scott",
+    },
 ];
 
 const categoriesDict = courses.reduce(
@@ -83,7 +142,7 @@ const categoriesDict = courses.reduce(
     }
 );
 
-const categories = Object.entries(categoriesDict).map((key, value) => {
+const categories = Object.entries(categoriesDict).map(([key, value]) => {
     return {
         category: key,
         courses: value,
@@ -91,12 +150,15 @@ const categories = Object.entries(categoriesDict).map((key, value) => {
 });
 
 let filteredCourses = [];
+let displayCourses = [];
 
 let selectedCategory = "All";
 let searchQuery = "";
 
 const selectCategory = (category) => {
+    categoryElsDict[selectedCategory].classList.remove("category--active");
     selectedCategory = category;
+    categoryElsDict[category].classList.add("category--active");
     filterCourses();
 };
 
@@ -109,7 +171,7 @@ const filterCourses = () => {
     filteredCourses =
         selectedCategory === "All"
             ? courses.slice()
-            : courses.filter((course) => course.category === category);
+            : courses.filter((course) => course.category === selectedCategory);
     const loweredSearchQuery = searchQuery.trim().toLowerCase();
     filteredCourses = filteredCourses.filter(
         (course) =>
@@ -117,6 +179,9 @@ const filterCourses = () => {
             course.category.toLowerCase().includes(loweredSearchQuery) ||
             course.author.toLowerCase().includes(loweredSearchQuery)
     );
+
+    displayCourses = filteredCourses.slice(0, PAGE_SIZE);
+    checkLoadMoreVisibility();
 
     renderCourses();
 };
@@ -143,7 +208,7 @@ const getCategoryClass = (category) => {
 const renderCourses = () => {
     coursesWrapperEl.innerHTML = "";
 
-    filteredCourses.forEach((course) => {
+    displayCourses.forEach((course) => {
         const wrapperEl = document.createElement("div");
         wrapperEl.className = "course";
         coursesWrapperEl.appendChild(wrapperEl);
@@ -190,9 +255,54 @@ const renderCourses = () => {
     });
 };
 
-const renderCategories = () => {};
+const loadMore = () => {
+    displayCourses = filteredCourses.slice(0, displayCourses.length + PAGE_SIZE);
+    renderCourses();
+    checkLoadMoreVisibility();
+};
 
-const categoryEls = renderCategories();
+const checkLoadMoreVisibility = () => {
+    if (displayCourses.length >= filteredCourses.length) {
+        loadMoreEl.classList.add("load-more--hidden");
+    } else {
+        loadMoreEl.classList.remove("load-more--hidden");
+    }
+};
+
+const renderCategories = () => {
+    categoriesWrapperEl.innerHTML = "";
+
+    const categoryElsDict = {};
+    const categoryEls = categories.map((category) => {
+        const wrapper = document.createElement("div");
+        wrapper.className = "category";
+        categoriesWrapperEl.appendChild(wrapper);
+
+        const titleEl = document.createElement("span");
+        titleEl.className = "category__title";
+        titleEl.innerText = category.category;
+        wrapper.appendChild(titleEl);
+
+        const coursesEl = document.createElement("span");
+        coursesEl.className = "category__courses";
+        coursesEl.innerText = category.courses;
+        wrapper.appendChild(coursesEl);
+
+        categoryElsDict[category.category] = wrapper;
+
+        wrapper.addEventListener("click", () => {
+            selectCategory(category.category);
+        });
+    });
+
+    return categoryElsDict;
+};
+
+loadMoreEl.addEventListener("click", () => {
+    loadMore();
+});
+
+const categoryElsDict = renderCategories();
 
 selectCategory("All");
 

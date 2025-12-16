@@ -1,4 +1,5 @@
 $gray900: #1e212c;
+$gray800: #424551;
 $gray700: #787a80;
 $gray600: #9a9ca5;
 $gray400: #d7dadd;
@@ -11,6 +12,7 @@ $warning: #f89828;
 $pink: #f52f6e;
 $danger: #ff4242;
 $deepblue: #7772f1;
+$primary: #ff3f3a;
 
 $shadowSmall: 0px 80px 80px -20px rgba(154, 156, 165, 0.08),
     0px 30px 24px -10px rgba(154, 156, 165, 0.05),
@@ -46,6 +48,7 @@ html {
 
 body {
     padding-top: 50px;
+    padding-bottom: 86px;
 }
 
 .container {
@@ -96,6 +99,56 @@ body {
 .categories {
     display: flex;
     gap: 12px;
+
+    .category {
+        /* tab/number */
+
+        /* Auto layout */
+        display: flex;
+        align-items: center;
+        padding: 10px 20px;
+        gap: 4px;
+        border: 1px solid transparent;
+
+        border-radius: 4px;
+        cursor: pointer;
+
+        &__title {
+            font-family: "Lato";
+            font-style: normal;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 26px;
+            text-align: center;
+
+            color: $gray600;
+        }
+
+        &__courses {
+            font-family: "Lato";
+            font-style: normal;
+            font-weight: 900;
+            font-size: 10px;
+            line-height: 150%;
+            text-align: center;
+
+            color: $gray600;
+            align-self: flex-start;
+        }
+
+        &:hover:not(&--active) * {
+            color: $gray700;
+        }
+
+        &--active {
+            border-color: $primary;
+            cursor: default;
+
+            * {
+                color: $primary;
+            }
+        }
+    }
 }
 
 .search-field {
@@ -105,11 +158,7 @@ body {
 
     .search {
         width: 100%;
-        // right: 345px;
-        // top: 222px;
-
         background: $white;
-        /* gray/400 */
         border: 1px solid $gray400;
         border-radius: 4px;
 
@@ -135,6 +184,7 @@ body {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
+    margin-bottom: 80px;
 }
 
 .course {
@@ -144,6 +194,7 @@ body {
     border-radius: 4px;
     box-shadow: $shadowSmall;
     box-sizing: border-box;
+    transition: 0.1s ease-out;
 
     &:hover {
         box-shadow: $shadowRegular;
@@ -165,23 +216,8 @@ body {
 
     &__category {
         display: inline-block;
-        /* badge */
-
-        /* Auto layout */
-        // display: flex;
-        // flex-direction: row;
-        // align-items: center;
         padding: 1px 8px;
-        // gap: 10px;
-
-        // width: 80px;
-        // height: 23px;
-
-        /* success */
         border-radius: 4px;
-
-        // width: 64px;
-        // height: 21px;
 
         font-family: "Lato";
         font-style: normal;
@@ -234,7 +270,6 @@ body {
     &__divider {
         border-right: 1px solid $gray700;
         height: 16px;
-        // transform: rotate(90deg);
     }
 
     &__author {
@@ -244,5 +279,35 @@ body {
         font-size: 18px;
         line-height: 150%;
         color: $gray700;
+    }
+}
+
+.load-more-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 80px;
+
+    .load-more {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+        cursor: pointer;
+        background: none;
+        padding: 0;
+        border: none;
+
+        &--hidden {
+            visibility: none;
+            display: none;
+        }
+
+        .load-more-text {
+            font-family: "Lato";
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 160%;
+            color: $gray800;
+        }
     }
 }

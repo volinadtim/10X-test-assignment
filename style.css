@@ -22,6 +22,7 @@ html {
 
 body {
   padding-top: 50px;
+  padding-bottom: 86px;
 }
 
 .container {
@@ -71,6 +72,46 @@ body {
   display: flex;
   gap: 12px;
 }
+.categories .category {
+  /* tab/number */
+  /* Auto layout */
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  gap: 4px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.categories .category__title {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 26px;
+  text-align: center;
+  color: #9a9ca5;
+}
+.categories .category__courses {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 900;
+  font-size: 10px;
+  line-height: 150%;
+  text-align: center;
+  color: #9a9ca5;
+  align-self: flex-start;
+}
+.categories .category:hover:not(.categories .category--active) * {
+  color: #787a80;
+}
+.categories .category--active {
+  border-color: #ff3f3a;
+  cursor: default;
+}
+.categories .category--active * {
+  color: #ff3f3a;
+}
 
 .search-field {
   position: relative;
@@ -80,7 +121,6 @@ body {
 .search-field .search {
   width: 100%;
   background: #ffffff;
-  /* gray/400 */
   border: 1px solid #d7dadd;
   border-radius: 4px;
   font-family: "Lato";
@@ -102,6 +142,7 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 30px;
+  margin-bottom: 80px;
 }
 
 .course {
@@ -111,6 +152,7 @@ body {
   border-radius: 4px;
   box-shadow: 0px 80px 80px -20px rgba(154, 156, 165, 0.08), 0px 30px 24px -10px rgba(154, 156, 165, 0.05), 0px 12px 10px -6px rgba(154, 156, 165, 0.04), 0px 4px 4px -4px rgba(30, 33, 44, 0.03);
   box-sizing: border-box;
+  transition: 0.1s ease-out;
 }
 .course:hover {
   box-shadow: 0px 80px 80px -20px rgba(154, 156, 165, 0.16), 0px 30px 24px -10px rgba(154, 156, 165, 0.1), 0px 12px 10px -6px rgba(154, 156, 165, 0.08), 0px 4px 4px -4px rgba(30, 33, 44, 0.05);
@@ -129,10 +171,7 @@ body {
 }
 .course__category {
   display: inline-block;
-  /* badge */
-  /* Auto layout */
   padding: 1px 8px;
-  /* success */
   border-radius: 4px;
   font-family: "Lato";
   font-style: normal;
@@ -188,4 +227,31 @@ body {
   font-size: 18px;
   line-height: 150%;
   color: #787a80;
+}
+
+.load-more-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 80px;
+}
+.load-more-container .load-more {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  cursor: pointer;
+  background: none;
+  padding: 0;
+  border: none;
+}
+.load-more-container .load-more--hidden {
+  visibility: none;
+  display: none;
+}
+.load-more-container .load-more .load-more-text {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 160%;
+  color: #424551;
 }
